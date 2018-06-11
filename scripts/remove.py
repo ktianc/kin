@@ -8,7 +8,7 @@ import client
 import os
 
 
-env.hosts = client.one
+env.hosts = client.ip
 env.user  = client.user
 env.password = client.password
 env.port = client.port

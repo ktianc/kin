@@ -9,7 +9,7 @@ sys.path.append("/usr/local/kin/host/")
 import client
 
 
-env.hosts = client.one
+env.hosts = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port
@@ -27,7 +27,7 @@ def nginx_m():
     with cd("/usr/local"):
         run("tar -zxvf nginx1.12.tar.gz")
     with cd("/usr/local/nginx-1.12.2"):
-        run("./configure")
+        run("./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module")
         run("make")
         run("make install")
     run("rm -rf /usr/local/nginx1.12.tar.gz")

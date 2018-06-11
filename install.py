@@ -517,7 +517,7 @@ while True:
             elif IP == "list":
                 print "Client Host :\n"
                 y = 0
-                for x in client.one:
+                for x in client.ip:
                     y += 1
                     z = str(y)
                     ip_dict[z] = x

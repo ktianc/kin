@@ -7,7 +7,7 @@ import sys
 sys.path.append("/usr/local/kin/host")
 import client
 
-env.hosts = client.one
+env.hosts = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port

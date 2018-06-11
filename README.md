@@ -1,6 +1,8 @@
 ﻿KIN
  ======
 
+    批量交互式运维工具
+
     server：python2.7，fabric，windows or linux
 
     client: centos7系列，ssh服务

@@ -7,7 +7,7 @@ import sys
 sys.path.append("/usr/local/kin/host/")
 import client
 
-env.hosts = client.one
+env.hosts = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port
@@ -28,7 +28,7 @@ def php56():
 def php70():
     run("rpm -Uvh https://www.ktianc.com/pag/webtatic.rpm")
     run("yum -y install php70w php70w-fpm php70w-mysqlnd php70w-gd php70w-opcache php70w-pecl-xdebug php70w-pecl-xhprof")
-
+#    run("yum -y install --enablerepo=remi --enablerepo=remi-php70 php php-fpm php-mysqlnd php-gd php-opcache php-pecl-xdebug php-pecl-xhprof")
 
 def phpmyadmin():
     run("yum -y install phpmyadmin")
