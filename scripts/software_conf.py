@@ -5,6 +5,7 @@ from fabric.api import *
 import sys
 sys.path.append("/usr/local/kin/host/")
 import client
+import os
 
 env.hosts = client.ip
 env.user = client.user
@@ -27,3 +28,9 @@ def postfix():
 
 def dovecot():
     pass
+
+def mysql():
+    new_passwd = raw_input("Please input new password : ")
+    old_passwd = os.popen("cat /var/log/mysqld.log |grep generated|sed 's/^.*host: //g'").read().replace("\n","")
+    run("mysqladmin -u root -p {0} password {1}").format(old_passwd,new_passwd)
+    

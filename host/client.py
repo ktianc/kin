@@ -3,9 +3,12 @@
 
 def host(ips,users,passwds):
     global ip,user,password,port
-    ip = ips
+    if "," in ips:
+    	ip = ips.split(",")
+    else:
+    	ip = ips
     user = users
     password = passwds
     port = 22
 
-host("ips","users","passwds")
+host("ips","root","passwd")
