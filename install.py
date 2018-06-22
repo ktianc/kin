@@ -21,7 +21,7 @@ software_d = {1:"other   : wget nmap net-tools unzip vim gcc openssl-devel glibc
                  11:"postfix   : postfix 2:2.10.1-6.el7",
                  12:"dovecot   : dovecot 1:2.2.10-8.el7",
                  13:"zabbix-agent    : No matching packages to list",
-                 14:"docker    : No matching packages to list"}
+                 14:"docker    : docker-ce.repo"}
 
 
 web_d = {1:"httpd   : httpd 2.4.6-67.el7.centos.6",
@@ -47,7 +47,7 @@ rm_nagios_c = "plugins xinetd nrpe configure onekey"
 
 ip_dict = {}
 
-software_list = ["other","epel","php56","php70","phpmyadmin","mysql","redis","java_y","java_m","vsftpd","postfix","dovecot","docker","zabbix-agent"]
+software_list = ["other","epel","php56","php70","phpmyadmin","mysql","redis","java_y","java_m","vsftpd","postfix","dovecot","docker","zabbix-agent","docker"]
 
 service_d ={1:"software : other epel php56 php70 phpmyadmin mysql redis java_y java_m vsftpd postfix dovecot",
             2:"web : httpd nginx_m nginx_y tomcat tengine resin jboss BT",
@@ -157,7 +157,7 @@ while True:
                 break
 
             elif software == "list":
-                colour(software_d[1],software_d[2],software_d[3],software_d[4],software_d[5],software_d[6],software_d[7],software_d[8],software_d[9],software_d[10],software_d[11],software_d[12],software_d[13])
+                colour(software_d[1],software_d[2],software_d[3],software_d[4],software_d[5],software_d[6],software_d[7],software_d[8],software_d[9],software_d[10],software_d[11],software_d[12],software_d[13],software_d[14])
 
             elif software in software_list:
                 sys_com("software",software)
