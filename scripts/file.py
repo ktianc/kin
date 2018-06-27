@@ -10,6 +10,7 @@ env.hosts  = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port
+env.key_filename = client.key_filename
 
 file_name = raw_input("Please input file name:")
 file_dir = raw_input("Please input file dir:")

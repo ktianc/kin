@@ -11,6 +11,7 @@ env.hosts = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port
+env.key_filename = client.key_filename
 
 def plugins():
     run("wget -P /usr/local/ https://www.ktianc.com/pag/plugins2.2.tar.gz")

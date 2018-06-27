@@ -11,6 +11,7 @@ env.hosts = client.ip
 env.user = client.user
 env.password = client.password
 env.port = client.port
+env.key_filename = client.key_filename
 
 def vsftpd():
 	with cd("/etc/vsftpd/"):

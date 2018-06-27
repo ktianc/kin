@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #coding=utf-8
 
-def host(ips,users,passwds):
-    global ip,user,password,port
+def host(ips,users,passwds,key=None):
+    global ip,user,password,port,key_filename
     if "," in ips:
     	ip = ips.split(",")
     else:
@@ -10,5 +10,6 @@ def host(ips,users,passwds):
     user = users
     password = passwds
     port = 22
+    key_filename = key
 
-host("ips","root","passwd")
+host("ips","root","passwd","key")
