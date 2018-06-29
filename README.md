@@ -3,15 +3,15 @@
 
     批量交互式运维工具
 
-    server：python2.7，fabric，windows or linux
+    server：python2.7，fabric1.14，windows or linux
 
     client: centos7系列，ssh服务
 
     请在server端先执行run_env.py文件
 
-    使用之前需要在host/client.py文件中添加上你的客户端ip、用户名、密码
+    使用之前需要在host/client.py文件中添加上你的客户端ip，用户名，密码，密钥
     * //客户端与客户端的用户名须一致，最好为 root
-    * //客户端与客户端的密码须一致，更利于部署，管理
+    * //客户端与客户端的密码or密钥须一致，更利于部署，管理
  
     $python install.py   //执行安装，根据提示进行下一步
     $python configure.py  //进行配置，根据提示进行下一步
@@ -31,6 +31,7 @@
     * nagios_c : nagios客户端
     * firewall : 开启端口、关闭端口、关闭selinux
     * restart ： 重启服务、暂停服务
+    * host : 连接上某一台服务器
 _________
 [__K__](https://www.ktianc.com "ktianc")  
   __Programming enrich life__

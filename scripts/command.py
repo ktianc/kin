@@ -14,5 +14,6 @@ env.key_filename = client.key_filename
 
 command = raw_input("Please input command:")
 
+@task
 def execute():
     run(command)

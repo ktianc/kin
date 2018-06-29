@@ -509,6 +509,16 @@ while True:
 
         while True:
 
+            if "," in client.ip:
+                ips = client.ip.split(",")
+                y = 0
+                for x in ips:
+                    y += 1
+                    z = str(y)
+                    ip_dict[z] = x
+            else:
+                ip_dict["1"] = client.ip
+
             IP = raw_input("Please input host ip (q = Quit) >>> ")
 
             if IP in quit_list:
@@ -516,13 +526,8 @@ while True:
 
             elif IP == "list":
                 print "Client Host :\n"
-                y = 0
-                for x in client.ip:
-                    y += 1
-                    z = str(y)
-                    ip_dict[z] = x
-                    print "{0}   : {1}".format(z,x)
-                print "\n"
+                for num,ip in ip_dict.items():
+                    print "{0}    : {1}".format(num,ip)
 
             elif IP in ip_dict.keys():
                 os.system("ssh root@{0}".format(ip_dict[IP]))
@@ -537,5 +542,9 @@ while True:
 
     else:
         print "InputError:No this service,Please input list see."
+
+
+
+
 
 
