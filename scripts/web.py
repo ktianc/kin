@@ -17,13 +17,13 @@ env.key_filename = client.key_filename
 
 
 def httpd():
-    "http://mirrors.hust.edu.cn/apache/httpd/"
+    "https://mirrors.hust.edu.cn/apache/httpd/"
     run("yum -y install httpd")
 
 
 def nginx_m():
     "https://nginx.org/en/download.html"
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/nginx1.12.tar.gz")
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/nginx1.12.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf nginx1.12.tar.gz")
     with cd("/usr/local/nginx-1.12.2"):
@@ -34,24 +34,24 @@ def nginx_m():
     run("rm -rf /usr/local/nginx-1.12.2")
 
 def nginx_y():
-    "http://nginx.org/packages/centos/7/noarch/RPMS/"
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/nginx.rpm")
+    "https://nginx.org/packages/centos/7/noarch/RPMS/"
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/nginx.rpm")
     with cd("/usr/local"):
         run("rpm -Uvh nginx.rpm")
         run("yum -y install nginx")
     run("rm -rf /usr/local/nginx.rpm")
 
 def tomcat():
-    "http://tomcat.apache.org/"
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/tomcat9.0.tar.gz")
+    "https://tomcat.apache.org/"
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/tomcat9.0.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf tomcat9.0.tar.gz")
         run("mv apache-tomcat-9.0.2 tomcat")
     run("rm -rf /usr/local/tomcat9.0.tar.gz")
 
 def tengine():
-    "http://tengine.taobao.org/"
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/tengine2.2.tar.gz")
+    "https://tengine.taobao.org/"
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/tengine2.2.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf tengine2.2.tar.gz")
     with cd("/usr/local/tengine-2.2.1"):
@@ -62,8 +62,8 @@ def tengine():
     run("rm -rf /usr/local/tengine-2.2.1")
 
 def resin():
-    "http://caucho.com/products/resin/download"
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/resin4.0.tar.gz")
+    "https://caucho.com/products/resin/download"
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/resin4.0.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf resin4.0.tar.gz")
     with cd("/usr/local/resin-4.0.55"):
@@ -79,4 +79,4 @@ def jboss():
 def BT():
     "https://www.bt.cn/about.html"
     with cd("/usr/local"):
-        run("yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh")
+        run("yum install -y wget && wget -O install.sh https://download.bt.cn/install/install.sh && sh install.sh")

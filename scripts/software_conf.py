@@ -14,11 +14,11 @@ env.port = client.port
 env.key_filename = client.key_filename
 
 def vsftpd():
-	with cd("/etc/vsftpd/"):
+    with cd("/etc/vsftpd/"):
         run("mv vsftpd.conf vsftpd.conf.bak")
         run("rm -rf ftpusers")
-        run("wget https://www.ktianc.com/conf/vsftpd.conf")
-        run("wget https://www.ktianc.com/conf/ftpusers")
+        run("wget https://www.ktianc.top/conf/vsftpd.conf")
+        run("wget https://www.ktianc.top/conf/ftpusers")
         run("firewall-cmd --zone=public --add-port=21/tcp --permanent")
         run("firewall-cmd --reload")
         run("setenforce 0")

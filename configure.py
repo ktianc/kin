@@ -14,6 +14,8 @@ service_d = {1:"software_conf : postfix dovecot vsftpd",
              4:"file : Transfer files",
              5: "shell : Use system commands"}
 
+add_service_list = ["nginx","tomcat"]
+
 def colour(*num):  # list color
     print ("\nPlease select : \n")
     for i in list(num):
@@ -34,23 +36,23 @@ while True:
         break
 
     elif service == "list":
-        colour("software_conf","web_conf","restart","file","shell")
+        colour("software","web_conf","restart","file","shell")
 
 
 #-------------------------------------------------software----------------------------------------------------------
 
-    elif  service == "software_conf":
+    elif  service == "software":
         while True:
             software = raw_input("Please input need configure software name (q = Quit) >>> ")
 
-            software_l = ["postfix","dovecot","vsftpd"]
+            software_l = ["postfix","dovecot","vsftpd","mysql"]
 
 
             if software == "q":
                 break
 
             elif software == "list":
-                colour("portfix","dovecot","vsftpd")
+                colour("portfix","dovecot","vsftpd","mysql")
 
             elif software in software_l:
                 sys_com("software_conf",software,mode="-P")
@@ -133,5 +135,16 @@ while True:
 
         print("Error:No this service,Please input list see.")
 
+#-------------------------------------------------add service------------------------------------------------------
+'''
+    elif server == "add_service":
+
+        file_type = raw_input("Please input add service:")
+
+        if file_type in add_service_list:
+            os.system("fab -f scripts/add.py")
+
+        else:
+'''   
 
 

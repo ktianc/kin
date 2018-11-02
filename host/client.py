@@ -9,4 +9,4 @@ def host(ips,users,passwds=None,key=None):
     port = 22
     key_filename = key
 
-host("","root","","")
+host("","","")

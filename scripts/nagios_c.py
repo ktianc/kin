@@ -14,7 +14,7 @@ env.port = client.port
 env.key_filename = client.key_filename
 
 def plugins():
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/plugins2.2.tar.gz")
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/plugins2.2.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf plugins2.2.tar.gz")
     with cd("/usr/local/nagios-plugins-2.2.1/"):
@@ -33,7 +33,7 @@ def xinetd():
     run("firewall-cmd --reload")
 
 def nrpe():
-    run("wget -P /usr/local/ https://www.ktianc.com/pag/nrpe3.1.tar.gz")
+    run("wget -P /usr/local/ https://www.ktianc.top/pag/nrpe3.1.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf nrpe3.1.tar.gz")
     with cd("/usr/local/nrpe-3.1.0"):
@@ -48,7 +48,7 @@ def nrpe():
 
 def configure():
     run("mv /usr/local/nagios/etc/nrpe.cfg  /usr/local/nagios/etc/nrpe.cfg_bak")
-    run("wget -P /usr/local/nagios/etc/  https://www.ktianc.com/conf/nrpe.cfg")
+    run("wget -P /usr/local/nagios/etc/  https://www.ktianc.top/conf/nrpe.cfg")
     run('echo "nrpe            5666/tcp                # NRPE">> /etc/services')
     run("sed  -i 's/yes/no/g' /etc/xinetd.d/nrpe")
     run("sed  -i 's/127.0.0.1/218.206.209.131/g' /etc/xinetd.d/nrpe")
