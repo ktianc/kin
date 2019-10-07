@@ -23,7 +23,7 @@ def httpd():
 
 def nginx_m():
     "https://nginx.org/en/download.html"
-    run("wget -P /usr/local/ https://www.ktianc.top/pag/nginx1.12.tar.gz")
+    run("wget -P /usr/local/ http://www.ktianc.top/pag/centos7/nginx1.12.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf nginx1.12.tar.gz")
     with cd("/usr/local/nginx-1.12.2"):
@@ -43,11 +43,11 @@ def nginx_y():
 
 def tomcat():
     "https://tomcat.apache.org/"
-    run("wget -P /usr/local/ https://www.ktianc.top/pag/tomcat9.0.tar.gz")
+    run("wget -P /usr/local/ http://www.ktianc.top/pag/centos7/tomcat8.5.tar.gz")
     with cd("/usr/local"):
-        run("tar -zxvf tomcat9.0.tar.gz")
-        run("mv apache-tomcat-9.0.2 tomcat")
-    run("rm -rf /usr/local/tomcat9.0.tar.gz")
+        run("tar -zxvf tomcat8.5.tar.gz")
+        run("mv apache-tomcat-8.5.24 tomcat")
+    run("rm -rf /usr/local/tomcat8.5.tar.gz")
 
 def tengine():
     "https://tengine.taobao.org/"

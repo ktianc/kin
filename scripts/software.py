@@ -74,16 +74,14 @@ def java_y():
 
 def java_m():
     "https://www.oracle.com/technetwork/java/javase/downloads/index.html"
-    #run("wget -P /usr/local/ https://www.ktianc.top/pag/jdk162.tar.gz")
+    #run("wget -P /usr/local/ https://www.ktianc.top/pag/centos7/jdk-8u221-linux-x64.tar.gz")
     with cd("/usr/local"):
-        run("tar -zxvf jdk162.tar.gz")
-
-
-    run("echo '\nexport JAVA_HOME=/usr/local/jdk1.8.0_162' >> /etc/profile")
+        run("tar -zxvf jdk-8u221-linux-x64.tar.gz")
+    run("echo '\nexport JAVA_HOME=/usr/local/jdk1.8.0_221' >> /etc/profile")
     run("echo 'export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar' >> /etc/profile")
     run("echo 'export PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile")
     run("source /etc/profile")
-    run("rm -rf /usr/local/jdk162.tar.gz")
+    run("rm -rf /usr/local/jdk-8u221-linux-x64.tar.gz")
 
 def vsftpd():
     run("yum -y install vsftpd")
