@@ -33,6 +33,7 @@ def nginx_m():
     run("rm -rf /usr/local/nginx1.12.tar.gz")
     run("rm -rf /usr/local/nginx-1.12.2")
 
+'''
 def nginx_y():
     "https://nginx.org/packages/centos/7/noarch/RPMS/"
     run("wget -P /usr/local/ https://www.ktianc.top/pag/nginx.rpm")
@@ -40,6 +41,7 @@ def nginx_y():
         run("rpm -Uvh nginx.rpm")
         run("yum -y install nginx")
     run("rm -rf /usr/local/nginx.rpm")
+'''
 
 def tomcat():
     "https://tomcat.apache.org/"
@@ -49,6 +51,7 @@ def tomcat():
         run("mv apache-tomcat-8.5.24 tomcat")
     run("rm -rf /usr/local/tomcat8.5.tar.gz")
 
+'''
 def tengine():
     "https://tengine.taobao.org/"
     run("wget -P /usr/local/ https://www.ktianc.top/pag/tengine2.2.tar.gz")
@@ -60,6 +63,7 @@ def tengine():
         run("make install")
     run("rm -rf /usr/local/tengine2.2.tar.gz")
     run("rm -rf /usr/local/tengine-2.2.1")
+
 
 def resin():
     "https://caucho.com/products/resin/download"
@@ -75,6 +79,7 @@ def resin():
 
 def jboss():
     pass
+'''
 
 def BT():
     "https://www.bt.cn/about.html"

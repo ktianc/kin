@@ -3,11 +3,11 @@
 
     批量交互式运维工具
 
-    server：python2.7，fabric1.14，windows or linux
+    Master：python2.7，fabric1.14，linux
 
-    client: centos7系列，ssh服务
+    Node: centos7系列，ssh服务
 
-    请在server端先执行run_env.py文件
+    请在Master先执行run_env.py文件
 
     使用之前需要在host/client.py文件中添加上你的客户端ip，用户名，密码，密钥
     * //客户端与客户端的用户名须一致，最好为 root
