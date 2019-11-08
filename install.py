@@ -8,18 +8,18 @@ sys.path.append("/usr/local/kin/host/")
 import client
 
 
-software_d = {1:"other   : wget nmap net-tools unzip vim gcc openssl-devel glibc openssl glibc-common gcc-c++ pcre pcre-devel zlib zlib-devel",
-                 2:"epel   : epel-release-latest-7.noarch.rpm and remi-release-7.rpm",
+software_d = {1:"other   : wget nmap net-tools unzip vim",
+                 2:"epel   : epel-release-latest-7.noarch.rpm",
                  3:"php56   : php php-opcache php-devel php-bcmath  php-tidy php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug php-pecl-xhprof php-gd",
                  4:"php70   : php php-common php-cli php70w-fpm php70w-mysqlnd php70w-gd php70w-opcache php70w-pecl-xdebug php70w-pecl-xhprof",
                  5:"phpmyadmin   : phpMyAdmin.noarch 4.4.15.10-2.el7",
                  6:"mysql   : mysql57-community-release-el7-8.noarch.rpm",
                  7:"redis   : redis-4.0.6.tar.gz",
                  8:"java_y   : jdk-8u162-linux-x64.rpm",
-                 9:"java_m   : jdk-8u162-linux-x64.tar.gz",
-                 10:"vsftpd   : vsftpd 3.0.2-22.el7",
-                 11:"postfix   : postfix 2:2.10.1-6.el7",
-                 12:"dovecot   : dovecot 1:2.2.10-8.el7",
+                 9:"java_m   : jdk-8u221-linux-x64.tar.gz",
+                 10:"vsftpd   : vsftpd",
+                 11:"postfix   : postfix",
+                 12:"dovecot   : dovecot",
                  13:"zabbix-agent    : No matching packages to list",
                  14:"docker    : docker-ce.repo"}
 
@@ -68,6 +68,8 @@ env_l = {1:"LAMP : apache:2.4  mysql:5.7  php:7.0",
          }
 
 quit_list = ["q","Q","quit","Quit","exit"]
+
+quest_list = ["list", "ll"]
 
 def sys_com(pyfile,comm,mode="-l"):  # implement
 
@@ -142,7 +144,7 @@ while True:
     if service in quit_list:
         break
 
-    elif service == "list":
+    elif service in quest_list:
         colour(service_d[1],service_d[2],service_d[3],service_d[4],service_d[5],service_d[6],service_d[7],service_d[8],service_d[9],service_d[10],service_d[11])
 
 
@@ -156,7 +158,7 @@ while True:
             if software in quit_list:
                 break
 
-            elif software == "list":
+            elif software in quest_list:
                 colour(software_d[1],software_d[2],software_d[3],software_d[4],software_d[5],software_d[6],software_d[7],software_d[8],software_d[9],software_d[10],software_d[11],software_d[12],software_d[13],software_d[14])
 
             elif software in software_list:
@@ -182,7 +184,7 @@ while True:
             if web_server in quit_list:
                 break
 
-            elif web_server == "list":
+            elif web_server in quest_list:
                 colour(web_d[1],web_d[2],web_d[3],web_d[4],web_d[5],web_d[6],web_d[7],web_d[8])
 
             elif web_server in web_list:
@@ -207,7 +209,7 @@ while True:
             if n_server in quit_list:
                 break
 
-            elif n_server == "list":
+            elif n_server in quest_list:
                 colour("plugins","xinetd","nrpe","configure","onekey")
 
             elif n_server in ["plugins","xinetd","nrpe","configure","onekey"]:
@@ -230,7 +232,7 @@ while True:
 
             firewall_type = raw_input("Please input firewall type, -P = Multithreading (q = Quit) >>> ")
 
-            if firewall_type == "list":
+            if firewall_type in quest_list:
                colour("open_port","close_port","selinux")
 
             elif firewall_type in quit_list:
@@ -352,7 +354,7 @@ while True:
             if reboot_s in quit_list:
                 break
 
-            elif reboot_s == "list":
+            elif reboot_s in quest_list:
                 colour("httpd","tomcat","nginx","vsftpd","postfix","dovecot","resin","mysqld","redis","firewalld")
 
             elif reboot_s in service_list:
@@ -408,7 +410,7 @@ while True:
             if inenv in quit_list:
                 break
 
-            elif inenv == "list":
+            elif inenv in quest_list:
                 colour(env_l[1],env_l[2],env_l[3],env_l[4])
 
             elif inenv == "LAMP":
@@ -447,7 +449,7 @@ while True:
             if rmenv in quit_list:
                 break
 
-            elif rmenv == "list":
+            elif rmenv in quest_list:
                 colour(env_l[1],env_l[2],env_l[3],env_l[4])
 
             elif rmenv == "LAMP":
@@ -485,7 +487,7 @@ while True:
             if repag in quit_list:
                 break
 
-            elif repag == "list":
+            elif repag in quest_list:
 
                 print "\nnagios client : {0}".format(rm_nagios_c)
                 print "web : {0}".format(rm_web)
@@ -524,7 +526,7 @@ while True:
             if IP in quit_list:
                 break
 
-            elif IP == "list":
+            elif IP in quest_list:
                 print "Client Host :\n"
                 for num,ip in ip_dict.items():
                     print "{0}    : {1}".format(num,ip)

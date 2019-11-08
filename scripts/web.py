@@ -23,6 +23,7 @@ def httpd():
 
 def nginx_m():
     "https://nginx.org/en/download.html"
+    run("yum -y install gcc make pcre-devel openssl-deve")
     run("wget -P /usr/local/ http://www.ktianc.top/pag/centos7/nginx1.12.tar.gz")
     with cd("/usr/local"):
         run("tar -zxvf nginx1.12.tar.gz")

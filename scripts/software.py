@@ -15,7 +15,7 @@ env.key_filename = client.key_filename
 
 
 def other():
-    run("yum -y install  wget nmap git net-tools unzip vim gcc openssl-devel glibc openssl glibc-common gcc-c++ pcre pcre-devel zlib zlib-devel")
+    run("yum -y install  wget nmap git net-tools lrzsz vim")
 
 def epel():
     run("rpm -ivh http://www.ktianc.top/pag/centos7/epel.rpm")
@@ -30,6 +30,7 @@ def php70():
     run("rpm -Uvh https://www.ktianc.top/pag/webtatic.rpm")
     run("yum -y install php70w php70w-fpm php70w-mysqlnd php70w-gd php70w-opcache php70w-pecl-xdebug php70w-pecl-xhprof")
 #    run("yum -y install --enablerepo=remi --enablerepo=remi-php70 php php-fpm php-mysqlnd php-gd php-opcache php-pecl-xdebug php-pecl-xhprof")
+
 '''
 def phpmyadmin():
     run("yum -y install phpmyadmin")
@@ -39,7 +40,6 @@ def phpmyadmin():
     run("sed -i s/'cookie'/'http'/g /etc/phpMyAdmin/config.inc.php")
     run("systemctl restart httpd")
 '''
-    
 
 def mysql():
     with cd("/usr/local"):
