@@ -21,7 +21,7 @@ software_d = {1:"other   : wget nmap net-tools unzip vim",
                  11:"postfix   : postfix",
                  12:"dovecot   : dovecot",
                  13:"zabbix-agent    : No matching packages to list",
-                 14:"docker    : docker-ce.repo"，
+                 14:"docker    : docker-ce.repo",
                  15:"zabbix_server : 4.4.1 ,需提前准备好mysql服务，并创建数据库zabbix，用户zabbix"}
 
 
