@@ -21,7 +21,8 @@ software_d = {1:"other   : wget nmap net-tools unzip vim",
                  11:"postfix   : postfix",
                  12:"dovecot   : dovecot",
                  13:"zabbix-agent    : No matching packages to list",
-                 14:"docker    : docker-ce.repo"}
+                 14:"docker    : docker-ce.repo"，
+                 15:"zabbix_server : 4.4.1 ,需提前准备好mysql服务，并创建数据库zabbix，用户zabbix"}
 
 
 web_d = {1:"httpd   : httpd 2.4.6-67.el7.centos.6",
@@ -39,7 +40,7 @@ service_list = ["httpd","tomcat","nginx","vsftpd","postfix","dovecot","resin","m
 
 rm_list = ["epel","php56","php70","phpmyadmin","mysql","redis","java_y","java_m","vsftpd","postfix","dovecot","docker","zabbix-agent","httpd","nginx_m","nginx_y","tomcat","tengine","resin","jboss","BT","plugins","xinetd","onekey"]
 
-rm_software = " epel php56 php70 phpmyadmin mysql redis java_y java_m vsftpd postfix dovecot docker zabbix-agent"
+rm_software = " epel php56 php70 phpmyadmin mysql redis java_y java_m vsftpd postfix dovecot docker zabbix_agent"
 
 rm_web = "httpd nginx_m nginx_y  tomcat tengine resin jboss BT"
 
@@ -47,7 +48,7 @@ rm_nagios_c = "plugins xinetd nrpe configure onekey"
 
 ip_dict = {}
 
-software_list = ["other","epel","php56","php70","phpmyadmin","mysql","redis","java_y","java_m","vsftpd","postfix","dovecot","docker","zabbix-agent","docker"]
+software_list = ["other","epel","php56","php70","phpmyadmin","mysql","redis","java_y","java_m","vsftpd","postfix","dovecot","docker","zabbix_agent","docker","zabbix_server"]
 
 service_d ={1:"software : other epel php56 php70 phpmyadmin mysql redis java_y java_m vsftpd postfix dovecot",
             2:"web : httpd nginx_m nginx_y tomcat tengine resin jboss BT",
@@ -159,7 +160,7 @@ while True:
                 break
 
             elif software in quest_list:
-                colour(software_d[1],software_d[2],software_d[3],software_d[4],software_d[5],software_d[6],software_d[7],software_d[8],software_d[9],software_d[10],software_d[11],software_d[12],software_d[13],software_d[14])
+                colour(software_d[1],software_d[2],software_d[3],software_d[4],software_d[5],software_d[6],software_d[7],software_d[8],software_d[9],software_d[10],software_d[11],software_d[12],software_d[13],software_d[14],software_d[15])
 
             elif software in software_list:
                 sys_com("software",software)

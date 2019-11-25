@@ -103,3 +103,40 @@ def docker():
     run("yum-config-manager --enable docker-ce-edge")
     run("yum -y install docker-ce")
 
+def zabbix_server():
+    a = 0
+    # 请提前安装好mysql数据库，并创建数据库zabbix，用户zabbix
+    # 检测有没有安装mysql数据库
+    mysql_passwd = raw_input("Please input zabbix user database password：")
+    try:
+        run("mysqld --version")
+        a = 1
+    finally:
+        if not a:
+            print "未检测到MySQL数据库"
+    try:
+        run("php --version")
+    except:
+        run("yum -y install php php-bcmath php-gd php-ldap php-mbstring php-xml php-mysql")
+    # 密码是否正确，查看有没有zabbix数据库
+    run("yum install -y yum-utils java-headless dejavu-sans-fonts fping OpenIPMI-libs libevent net-snmp-libs unixODBC")
+    run("yum install -y http://www.ktianc.top/pag/centos7/iksemel-1.4-20.122.el7.x86_64.rpm")
+    run("yum -y install httpd")
+    run("rpm -Uvh http://www.ktianc.top/pag/centos7/zabbix/zabbix-server-mysql-4.4.1-1.el7.x86_64.rpm")
+    run("rpm -Uvh http://www.ktianc.top/pag/centos7/zabbix/zabbix-web-4.4.1-1.el7.noarch.rpm http://www.ktianc.top/pag/centos7/zabbix/zabbix-web-mysql-4.4.1-1.el7.noarch.rpm")
+    run("rpm -Uvh http://www.ktianc.top/pag/centos7/zabbix/zabbix-agent-4.4.1-1.el7.x86_64.rpm")
+    run("rpm -Uvh http://www.ktianc.top/pag/centos7/zabbix/zabbix-get-4.4.1-1.el7.x86_64.rpm")
+    # 导入数据库
+    run("zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p{0} zabbix".format(mysql_passwd))
+    # 修改连接数据库密码
+    run("sed -i 's/# DBPassword=/DBPassword={0}/g' /etc/zabbix/zabbix_server.conf".format(mysql_passwd))
+    # 修改时区
+    run("sed -i 's!# php_value date.timezone Europe/Riga!php_value date.timezone Asia/Shanghai!g' /etc/httpd/conf.d/zabbix.conf")
+    # 获取字体
+    with cd("/usr/share/zabbix/assets/fonts"):
+        run("wget http://www.ktianc.top/pag/conf/simkai.ttf")
+    # 删除默认软连接的字符集
+    run("sed -i '0,/graphfont/s/graphfont/simkai/' /usr/share/zabbix/include/defines.inc.php")
+    run("systemctl restart httpd zabbix-server zabbix-agent")
+    print "访问地址：http://localhost/zabbix\n用户名：Admin\n密码：zabbix"
+
