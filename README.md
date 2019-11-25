@@ -33,5 +33,5 @@
     * restart ： 重启服务、暂停服务
     * host : 连接上某一台服务器
 _________
-[__K__](https://www.ktianc.com "ktianc")  
+[__K__](http://www.ktianc.top "ktianc")  
   __Programming enrich life__
